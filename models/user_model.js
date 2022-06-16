@@ -21,10 +21,6 @@ const userSchema = new mongoose.Schema(
       type: String,
       default: "./uploads/profil/default_user.png",
     },
-    bio: {
-      type: String,
-      max: 1024,
-    },
     likes: {
       type: [String],
     },
@@ -39,6 +35,19 @@ userSchema.pre("save", async function (next) {
   this.password = await bcrypt.hash(this.password, salt);
   next();
 });
+
+//control
+userSchema.statics.login = async function (email, password) {
+  const user = await this.findOne({ email });
+  if (user) {
+    const auth = await bcrypt.compare(password, user.password);
+    if (auth) {
+      return user;
+    }
+    throw Error("Password incorrect");
+  }
+  throw Error("Email incorrect");
+};
 
 const UserModel = mongoose.model("user", userSchema);
 

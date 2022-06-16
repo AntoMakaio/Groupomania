@@ -16,3 +16,38 @@ module.exports.userInfo = (req, res) => {
     else console.log("ID non connu : " + req.params.id);
   }).select("-password");
 };
+
+// module.exports.updateUser = async (req, res) => {
+//   if (!ObjectId.isValid(req.params.id))
+//     return res.status(400).send("ID non connu : " + req.params.id);
+
+//   try {
+//     await UserModel.findOneAndUpdate(
+//       { _id: req.params.id },
+//       {
+//         $set: {
+
+//         },
+//       },
+//       { new: true, upsert: true, setDefaultsOnInsert: true },
+//       (err, docs) => {
+//         if (!err) return res.send(docs);
+//         if (err) return res.status(500).send({ message: err });
+//       }
+//     )
+//   } catch (err) {
+//     return res.status(500).json({ message: err });
+//   }
+// };
+
+module.exports.deleteUser = async (req, res) => {
+  if (!ObjectId.isValid(req.params.id))
+    return res.status(400).send("ID non connu : " + req.params.id);
+
+  try {
+    await UserModel.deleteOne({ _id: req.params.id }).exec();
+    res.status(200).json({ message: "Utilisateur Supprimé" });
+  } catch (err) {
+    return res.status(500).json({ message: err });
+  }
+};
