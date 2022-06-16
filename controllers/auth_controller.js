@@ -19,7 +19,6 @@ module.exports.signUp = async (req, res) => {
   } catch (err) {
     // géré par error_utils
     const errors = signUpErrors(err);
-    console.log("signUpErrors:", signUpErrors);
     res.status(200).send({ errors });
   }
 };
