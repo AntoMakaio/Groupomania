@@ -26,7 +26,7 @@ const userSchema = new mongoose.Schema(
       max: 1024,
       minlength: 6,
     },
-    profilImage: {
+    picture: {
       type: String,
       default: "./uploads/profil/default_user.png",
     },

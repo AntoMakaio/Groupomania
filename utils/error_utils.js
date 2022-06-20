@@ -28,3 +28,14 @@ module.exports.signInErrors = (err) => {
     errors.password = "Mot de passe incorrect";
   return errors;
 };
+
+module.exports.uploadErrors = (err) => {
+  let errors = { format: "", maxSize: "" };
+
+  if (err.message.includes("Fichier invalide"))
+    errors.format = "Mauvais format de fichier";
+
+  if (err.message.includes("max size"))
+    errors.maxSize = "Fichier de 1mo maximum";
+  return errors;
+};
