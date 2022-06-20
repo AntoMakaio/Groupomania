@@ -1,10 +1,16 @@
 module.exports.signUpErrors = (err) => {
-  let errors = { email: "", password: "" };
+  let errors = { pseudo: "", email: "", password: "" };
+
+  if (err.message.includes("pseudo"))
+    errors.pseudo = "Pseudo invalide, 3 caractères minimum";
 
   if (err.message.includes("email")) errors.email = "Email invalide";
 
   if (err.message.includes("password"))
     errors.password = "Mot de passe invalide, 6 caractères minimum";
+
+  if (err.code === 11000 && Object.keys(err.keyValue)[0].includes("pseudo"))
+    errors.pseudo = "Pseudo déjà utilisé";
 
   if (err.code === 11000 && Object.keys(err.keyValue)[0].includes("email"))
     errors.email = "Email déjà utilisé";
