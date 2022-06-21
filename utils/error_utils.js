@@ -1,19 +1,18 @@
 module.exports.signUpErrors = (err) => {
   let errors = { pseudo: "", email: "", password: "" };
 
-  if (err.message.includes("pseudo"))
-    errors.pseudo = "Pseudo invalide, 3 caractères minimum";
+  if (err.message.includes("pseudo")) errors.pseudo = "3 caractères minimum";
 
-  if (err.message.includes("email")) errors.email = "Email invalide";
+  if (err.message.includes("email")) errors.email = "e-mail invalide";
 
   if (err.message.includes("password"))
-    errors.password = "Mot de passe invalide, 6 caractères minimum";
+    errors.password = "6 caractères minimum";
 
   if (err.code === 11000 && Object.keys(err.keyValue)[0].includes("pseudo"))
-    errors.pseudo = "Pseudo déjà utilisé";
+    errors.pseudo = "Nom d'utilisateur déjà utilisé";
 
   if (err.code === 11000 && Object.keys(err.keyValue)[0].includes("email"))
-    errors.email = "Email déjà utilisé";
+    errors.email = "e-mail déjà utilisé";
 
   return errors;
 };
@@ -22,7 +21,7 @@ module.exports.signUpErrors = (err) => {
 module.exports.signInErrors = (err) => {
   let errors = { email: "", password: "" };
 
-  if (err.message.includes("Email")) errors.email = "Email inconnu";
+  if (err.message.includes("Email")) errors.email = "e-mail inconnu";
 
   if (err.message.includes("password"))
     errors.password = "Mot de passe incorrect";

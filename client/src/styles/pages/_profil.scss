@@ -42,6 +42,8 @@
       }
       form {
         input {
+          cursor: pointer;
+          color: $color-3;
           padding: 10px 20px;
           background-color: transparent;
           border: 1px solid $color-2;
@@ -51,6 +53,14 @@
           box-shadow: $shadow;
         }
       }
+      
     }
   }
+}
+
+.error {
+margin-top: 3px;
+  color: $color-1;
+  font-weight: bold;
+  font-size: 0.9rem;
 }
