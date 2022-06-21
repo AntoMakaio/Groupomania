@@ -1,35 +1,56 @@
 .profil-page {
-    margin: 100px auto 0;
-    max-width: 1400px;
-  
-    .log-container {
-      margin: 0 auto;
+  margin: 120px auto 0;
+  max-width: 1200px;
+
+  .log-container {
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 70% 30%;
+    box-shadow: rgba(0, 0, 0, 0.844);
+  }
+
+  .connection-form {
+    min-width: 490px;
+    width: 90%;
+    text-align: center;
+    margin: 0 auto;
+    padding: 20px;
+    box-shadow: $shadow;
+
+    .form-container {
       display: grid;
-      grid-template-columns: 50% 50%;
-  
-      @media screen and(max-width: 885px) {
-        grid-template-columns: 1fr;
+      grid-template-columns: 30% 70%;
+
+      ul {
+        li {
+          cursor: pointer;
+          padding: 10px 20px;
+          transition: 0.2s;
+        }
+        .active-btn {
+          background: rgb(212, 212, 212);
+
+          &:hover {
+            background: rgb(143, 143, 143);
+          }
+        }
+        li:not(.active-btn) {
+          &:hover {
+            transform: scale(1.05);
+          }
+        }
+      }
+      form {
+        input {
+          padding: 10px 20px;
+          background-color: transparent;
+          border: 1px solid $color-2;
+          margin: 0;
+          font-size: 1.2rem;
+          font-family: $font-2;
+          box-shadow: $shadow;
+        }
       }
     }
-}
-
-.img-container {
-  display: grid;
-  align-items: center;
-  height: 100%;
-
-  img {
-    height: 300px;
-  }
-}
-
-div {
-  background: rgb(215, 215, 215);
-  border-radius: 20px;
-  padding: 25px;
-  margin: 20px 10px;
-
-  @media screen and(max-width: 700px) {
-    margin: 10px 10px;
   }
 }

@@ -4,15 +4,18 @@ import Log from "./components/Log";
 
 const App = () => {
   return (
-    //à passer sur la page profil.js
+    //à passer sur  page/profil.js
     <div className="profil-page">
       <div className="log-container">
-        <Log />
+        <Log signin={false} signup={true} />
         <div className="img-container">
           <img src="./img/log-profil.png" alt="Image page Profil" />
         </div>
       </div>
     </div>
+    // <div>
+    //   <Routes />
+    // </div>
   );
 };
 export default App;
