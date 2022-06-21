@@ -11,7 +11,7 @@ const PostSchema = new mongoose.Schema(
       trim: true,
       maxlength: 240,
     },
-    image: {
+    picture: {
       type: String,
     },
     video: {
