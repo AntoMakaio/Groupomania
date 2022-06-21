@@ -1,10 +1,8 @@
 import React from "react";
-import Routes from "./components/Routes";
-import Log from "./components/Log";
+import Log from "../components/Log";
 
-const App = () => {
+const Profil = () => {
   return (
-    //à passer sur la page profil.js
     <div className="profil-page">
       <div className="log-container">
         <Log />
@@ -15,4 +13,5 @@ const App = () => {
     </div>
   );
 };
-export default App;
+
+export default Profil;
