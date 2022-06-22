@@ -41,10 +41,12 @@ const SignUpForm = () => {
         <>
           <SignInForm />
           <br />
-          <span></span>
-          <p className="valid">
-            Inscription validé ! Vous pouvez maintenant vous connecter.
-          </p>
+          <br />
+          <span>
+            <p className="valid">
+              Inscription validé ! Vous pouvez maintenant vous connecter.
+            </p>
+          </span>
         </>
       ) : (
         <form action="" onSubmit={handleRegister} id="sign-up-form">

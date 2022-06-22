@@ -12,13 +12,12 @@ const app = express();
 
 const corsOptions = {
   origin: process.env.CLIENT_URL,
-  Credentials: true,
+  credentials: true,
   allowedHeaders: ["sessionId", "Content-Type"],
   exposedHeaders: ["sessionId"],
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   preflightContinue: false,
 };
-
 app.use(cors(corsOptions));
 
 app.use(bodyParser.json());
