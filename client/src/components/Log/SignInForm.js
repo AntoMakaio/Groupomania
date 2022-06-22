@@ -24,10 +24,9 @@ const SignInForm = () => {
         if (res.data.errors) {
           emailError.innerHTML = res.data.errors.email;
           passwordError.innerHTML = res.data.errors.password;
+        } else {
+          window.location = "/";
         }
-        // else {
-        //   window.location = "/";
-        // }
       })
       .catch((err) => {
         console.log(err);
@@ -36,8 +35,7 @@ const SignInForm = () => {
 
   return (
     <form action="" onSubmit={handleLogin} id="sign-up-form">
-      <label htmlFor="email">Email</label>
-      <br />
+      <label htmlFor="email">Votre e-mail</label>
       <br />
       <input
         type="text"
@@ -48,8 +46,7 @@ const SignInForm = () => {
       />
       <div className="email error"></div>
       <br />
-      <label htmlFor="password">Mot de passe</label>
-      <br />
+      <label htmlFor="password">Votre mot de passe</label>
       <br />
       <input
         type="password"

@@ -35,7 +35,6 @@ const SignUpForm = () => {
     <form action="" onSubmit={handleRegister} id="sign-up-form">
       <label htmlFor="pseudo">Nom d'utilisateur</label>
       <br />
-      <br />
       <input
         type="text"
         name="pseudo"
@@ -48,7 +47,6 @@ const SignUpForm = () => {
       <br />
       <label htmlFor="email">Votre e-mail</label>
       <br />
-      <br />
       <input
         type="text"
         name="email"
@@ -59,8 +57,9 @@ const SignUpForm = () => {
       <div className="email error"></div>
       <br />
       <br />
-      <label htmlFor="password">Votre mot de passe</label>
-      <br />
+      <label className="label" htmlFor="password">
+        Votre mot de passe
+      </label>
       <br />
       <input
         type="password"

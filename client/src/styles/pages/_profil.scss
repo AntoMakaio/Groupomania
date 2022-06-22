@@ -9,6 +9,22 @@
     box-shadow: rgba(0, 0, 0, 0.844);
   }
 
+  .img-container {
+    display: grid;
+    align-items: center;
+    height: 100%;
+  
+    img {
+      height: 280px;
+  }
+  }
+  
+  .error {
+  margin-top: 3px;
+    color: $color-1;
+    font-weight: bold;
+    font-size: 0.9rem;
+  }
   .connection-form {
     min-width: 490px;
     width: 90%;
@@ -16,7 +32,7 @@
     margin: 0 auto;
     padding: 20px;
     box-shadow: $shadow;
-
+    
     .form-container {
       display: grid;
       grid-template-columns: 30% 70%;
@@ -56,11 +72,4 @@
       
     }
   }
-}
-
-.error {
-margin-top: 3px;
-  color: $color-1;
-  font-weight: bold;
-  font-size: 0.9rem;
 }
