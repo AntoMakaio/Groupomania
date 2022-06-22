@@ -24,9 +24,9 @@ $black: rgb(19, 19, 19);
 $shadow: 0px 0px 15px 2px rgb(201, 201, 201);
 
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
   list-style-type: none;
   text-decoration: none;
 }
@@ -52,6 +52,7 @@ body {
 
   .ul-navbar {
     display: flex;
+    margin-right: 10px;
   }
 
   .li-navbar {
