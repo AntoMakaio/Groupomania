@@ -22,7 +22,7 @@ const Logout = () => {
   };
   return (
     <li onClick={logout}>
-      <h4>Logout</h4>
+      <h4 className="logout">Logout</h4>
     </li>
   );
 };

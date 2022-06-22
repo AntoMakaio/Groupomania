@@ -22,10 +22,18 @@ const Nav = () => {
           <ul className="ul-navbar">
             <li></li>
             <li className="nav-welcome">
-              <NavLink exact to="/profil">
-                <h4>Bienvenue sur notre réseau {userData.pseudo} !</h4>
-              </NavLink>
+              <h4>Bienvenue sur notre réseau {userData.pseudo} !</h4>
             </li>
+            <NavLink exact to="/">
+              <li className="li-navbar">
+                <h4>Accueil</h4>
+              </li>
+            </NavLink>
+            <NavLink exact to="/profil">
+              <li className="li-navbar">
+                <h4>Profil</h4>
+              </li>
+            </NavLink>
             <Logout />
           </ul>
         ) : (

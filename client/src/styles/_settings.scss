@@ -54,6 +54,15 @@ body {
     display: flex;
   }
 
+  .li-navbar {
+    padding-right: 20px;
+  }
+
   .nav-welcome {
     margin: 0 30px;
+  }
+
+  .logout {
+    cursor: pointer;
+    color: $color-1
   }
