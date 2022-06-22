@@ -37,3 +37,14 @@ body {
   background: $white;
   color: $color-3;
 }
+
+.valid {
+  color: rgb(0, 162, 0);
+  font-size: 0.9rem;
+}
+
+.error {
+  margin-top: 3px;
+    color: $color-1;
+    font-size: 0.9rem;
+  }

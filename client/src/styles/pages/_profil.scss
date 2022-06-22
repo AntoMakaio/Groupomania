@@ -19,12 +19,6 @@
   }
   }
   
-  .error {
-  margin-top: 3px;
-    color: $color-1;
-    font-weight: bold;
-    font-size: 0.9rem;
-  }
   .connection-form {
     min-width: 490px;
     width: 90%;
@@ -58,7 +52,6 @@
       }
       form {
         input {
-          cursor: pointer;
           color: $color-3;
           padding: 10px 20px;
           background-color: transparent;

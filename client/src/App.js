@@ -11,7 +11,7 @@ const App = () => {
       await axios({
         method: "get",
         url: `${process.env.REACT_APP_API_URL}jwtid`,
-        withCredentials: true,
+        withCredentials: false,
       })
         .then((res) => {
           console.log(res);
@@ -23,7 +23,7 @@ const App = () => {
   }, [uid]);
 
   return (
-    <UidContext.Provider value={uid}>
+    <UidContext.Provider>
       <Routes />
     </UidContext.Provider>
   );

@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import axios from "axios";
+import SignInForm from "./SignInForm";
 
 const SignUpForm = () => {
+  const [formSubmit, setFormSubmit] = useState(false);
   const [pseudo, setPseudo] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -27,52 +29,67 @@ const SignUpForm = () => {
           pseudoError.innerHTML = res.data.errors.pseudo;
           emailError.innerHTML = res.data.errors.email;
           passwordError.innerHTML = res.data.errors.password;
+        } else {
+          setFormSubmit(true);
         }
       })
       .catch((err) => console.log(err));
   };
   return (
-    <form action="" onSubmit={handleRegister} id="sign-up-form">
-      <label htmlFor="pseudo">Nom d'utilisateur</label>
-      <br />
-      <input
-        type="text"
-        name="pseudo"
-        id="pseudo"
-        onChange={(e) => setPseudo(e.target.value)}
-        value={pseudo}
-      />
-      <div className="pseudo error"></div>
-      <br />
-      <br />
-      <label htmlFor="email">Votre e-mail</label>
-      <br />
-      <input
-        type="text"
-        name="email"
-        id="email"
-        onChange={(e) => setEmail(e.target.value)}
-        value={email}
-      />
-      <div className="email error"></div>
-      <br />
-      <br />
-      <label className="label" htmlFor="password">
-        Votre mot de passe
-      </label>
-      <br />
-      <input
-        type="password"
-        name="password"
-        id="password"
-        onChange={(e) => setPassword(e.target.value)}
-        value={password}
-      />
-      <div className="password error"></div>
-      <br />
-      <br />
-      <input type="submit" value="Valider l'inscription" />
-    </form>
+    <>
+      {formSubmit ? (
+        <>
+          <SignInForm />
+          <br />
+          <span></span>
+          <p className="valid">
+            Inscription validé ! Vous pouvez maintenant vous connecter.
+          </p>
+        </>
+      ) : (
+        <form action="" onSubmit={handleRegister} id="sign-up-form">
+          <label htmlFor="pseudo">Nom d'utilisateur</label>
+          <br />
+          <input
+            type="text"
+            name="pseudo"
+            id="pseudo"
+            onChange={(e) => setPseudo(e.target.value)}
+            value={pseudo}
+          />
+          <div className="pseudo error"></div>
+          <br />
+          <br />
+          <label htmlFor="email">Votre e-mail</label>
+          <br />
+          <input
+            type="text"
+            name="email"
+            id="email"
+            onChange={(e) => setEmail(e.target.value)}
+            value={email}
+          />
+          <div className="email error"></div>
+          <br />
+          <br />
+          <label className="label" htmlFor="password">
+            Votre mot de passe
+          </label>
+          <br />
+          <input
+            type="password"
+            name="password"
+            id="password"
+            onChange={(e) => setPassword(e.target.value)}
+            value={password}
+          />
+          <div className="password error"></div>
+          <br />
+          <br />
+          <input type="submit" value="Valider l'inscription" />
+        </form>
+      )}
+    </>
   );
 };
 
