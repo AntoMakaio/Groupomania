@@ -4,11 +4,13 @@ export const dateParser = (num) => {
     year: "numeric",
     month: "short",
     day: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
   };
 
   let timestamp = Date.parse(num);
 
-  let date = new Date(timestamp).toLocaleDateString("fr-FR", options);
+  let date = new Date(timestamp).toLocaleDateString("fr-FR");
 
   return date.toString();
 };
