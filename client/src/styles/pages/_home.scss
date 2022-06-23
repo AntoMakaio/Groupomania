@@ -1,1 +1,16 @@
+.home {
+    max-width: 800px;
+    grid-template-columns: 60px 1fr 374px;
+    overflow: hidden;
+    margin: 80px auto 50px;
+    position: relative;
 
+  
+    .main {
+      .home-header {
+        margin: 0 auto 12px;
+        text-align: center;
+        
+      }
+    }
+}

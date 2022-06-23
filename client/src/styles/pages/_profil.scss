@@ -108,7 +108,7 @@ h1 {
         width: 270px;
         background: $color-3;
         color: $color-2;
-        border-radius: 20px;
+        border-radius: 20px 20px 5px 5px;
         display: inline-block;
         padding: 9px 0;
         transition: 0.2s;
@@ -116,22 +116,21 @@ h1 {
         cursor: pointer;
       }
       input[type="file"] {
-        position: absolute;
-        opacity: 1;
-        transform: translate(-3px, -50%);
-        cursor: pointer;
-        padding: 10px 20px;
 
-        @media screen and(max-width: 1121px) {
-          opacity: 0;
-        }
+       display: none;
       }
       input[type="submit"] {
+        border: none;
+        cursor: pointer;
+        width: 270px;
+        color: $color-3;
         margin-top: 10px;
-        border-radius: 20px;
+        border-radius: 5px 5px 20px 20px;
+        padding: 10px 20px;
+        transition: 0.2s ease-in-out;
 
         &:hover {
-          letter-spacing: 1px;
+          transform: scale(1.03);
         }
       }
     }
