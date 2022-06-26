@@ -78,6 +78,57 @@
       color: $color-1;
     }
 }
+.comment-container.client {
+  border: 1.5px dashed $color-2;
+  border-radius: 15px 15px 15px 5px;
+}
+.comment-container {
+  display: grid;
+  grid-template-columns: 50px 1fr;
+  border: 1px solid $color-2;
+  padding: 15px;
+  margin: 5px 0;
+  border-radius: 15px 5px 15px 5px;
+
+  img {
+    height: 40px;
+    width: 40px;
+    border-radius: 20px 5px 20px 5px;
+    box-shadow: 1px 1px 3px rgba(51, 51, 51, 0.192);
+    object-fit: cover;
+  }
+  .comment-header {
+    display: flex;
+    justify-content: space-between;
+
+    .pseudo {
+      display: flex;
+
+      h3 {
+        font-family: $font-1;
+      }
+      span {
+        transform: translate(6px, 4px);
+        cursor: pointer;
+
+        img {
+          box-shadow: none;
+          height: 15px;
+          width: 15px;
+        }
+      }
+    }
+
+  }
+  span {
+    font-size: 0.8rem;
+    font-style: italic;
+    font-family: $font-1;
+  }
+  p {
+    margin-top: 8px;
+  }
+}
 
 .card-header {
   display: flex;
@@ -91,6 +142,47 @@ span {
   font-family: $font-1;
 
 }
+}
+
+.comment-form {
+  margin-top: 6px;
+
+  input[type="text"] {
+    border: 1px solid $color-2;
+    width: 100%;
+    border-radius: 5px 15px 15px 15px;
+    padding: 20px;
+    font-size: 1rem;
+
+    &:focus {
+      box-shadow: 0 0 2px rgba(51, 51, 51, 0.5);
+      border: 1px solid $color-1;
+    }
+
+  }
+  input[type="submit"] {
+    border: none;
+    margin-top: 4px;
+    padding: 10px 16px;
+    width: 200px;
+    background: $color-2;
+    border-radius: 5px 5px 20px 20px;
+    transition: 0.2s ease-in-out;
+    float: right;
+
+    &:hover {
+      transform: scale(1.02);
+      background: $color-1;
+    }
+  }
+  button {
+    background: $color-1;
+    transition: 0.2s;
+
+    &:hover {
+      background: $color-2;
+    }
+  }
 }
 
 .card-footer {

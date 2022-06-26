@@ -13,9 +13,6 @@ const Profil = () => {
       ) : (
         <div className="log-container">
           <Log signin={false} signup={true} />
-          <div className="img-container">
-            <img src="./img/log-profil.png" alt="Image page Profil" />
-          </div>
         </div>
       )}
     </div>
