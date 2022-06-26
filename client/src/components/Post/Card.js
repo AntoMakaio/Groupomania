@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { updatePost } from "../../actions/post_actions";
 import { dateParser, isEmpty } from "../Utils";
 import LikeButton from "./LikeButton";
 
@@ -9,8 +10,14 @@ const Card = ({ post }) => {
   const [textUpdate, setTextUpdate] = useState(null);
   const usersData = useSelector((state) => state.usersReducer);
   const userData = useSelector((state) => state.userReducer);
+  const dispatch = useDispatch();
 
-  const updateItem = async () => {};
+  const updateItem = () => {
+    if (textUpdate) {
+      dispatch(updatePost(post._id, textUpdate));
+    }
+    setIsUpdated(false);
+  };
 
   useEffect(() => {
     !isEmpty(usersData[0]) && setIsLoading(false);
@@ -81,7 +88,7 @@ const Card = ({ post }) => {
             )}
             {userData._id === post.posterId && (
               <div className="btn-container">
-                <div onClick={() => setIsUpdated(true)}>
+                <div onClick={() => setIsUpdated(!isUpdated)}>
                   <img src="./img/icons/edit.svg" alt="edit" />
                 </div>
               </div>
