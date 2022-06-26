@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { dateParser, isEmpty } from "../Utils";
+import LikeButton from "./LikeButton";
 
 const Card = ({ post }) => {
   const [isLoading, setIsLoading] = useState(true);
@@ -52,6 +53,24 @@ const Card = ({ post }) => {
                 alt="Image de post"
               />
             )}
+            {post.video && (
+              <iframe
+                width="500"
+                height="300"
+                src={post.video}
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                title={post._id}
+              ></iframe>
+            )}
+            <div className="card-footer">
+              <div className="comment-icon">
+                <img src="./img/icons/comment.svg" alt="icon commentaire" />
+                <span>{post.comments.length}</span>
+              </div>
+              <LikeButton post={post} />
+            </div>
           </div>
         </>
       )}
