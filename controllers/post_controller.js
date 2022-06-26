@@ -5,7 +5,7 @@ const { uploadErrors } = require("../utils/error_utils");
 const ObjectID = require("mongoose").Types.ObjectId;
 const fs = require("fs");
 const { promisify } = require("util");
-// const pipeline = promisify(require("stream").pipeline);
+const pipeline = promisify(require("stream").pipeline);
 
 // post ***************
 
@@ -46,7 +46,7 @@ module.exports.createPost = async (req, res) => {
   const newPost = new postModel({
     posterId: req.body.posterId,
     message: req.body.message,
-    // picture: req.file !== null ? "./uploads/posts/" + fileName : "",
+    picture: req.file !== null ? "./uploads/posts/" + fileName : "",
     video: req.body.video,
     likers: [],
     comments: [],
