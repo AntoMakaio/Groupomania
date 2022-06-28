@@ -10,7 +10,63 @@
       .home-header {
         margin: 0 auto 12px;
         text-align: center;
-        
+
+        .connection-form {
+          border-radius: 20px;
+          padding: 20px;
+  
+          ul {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 18px;
+  
+            li {
+              cursor: pointer;
+              border-radius: 20px;
+              padding: 12px 14px;
+              transition: .2s;
+              margin: 0 8px;
+            }
+            .active-btn {
+              background: $color-2;
+    
+              &:hover {
+                transform: scale(1.1)
+
+              }
+            }
+            li:not(.active-btn) {
+              &:hover {
+                transform: scale(1.05)
+              }
+            }
+          }
+          form {
+            input {
+              border-color: $color-2;
+              padding: 10px 14px;
+              margin: 0;
+              font-size: 1.2rem;
+              font-family: $font-2;
+              border-radius: 5px 15px 5px 15px;
+    
+              &:focus {
+                box-shadow: 0 0 3px rgba(51, 51, 51, 0.2);
+              }
+            }
+            input[type=submit] {
+              color: $color-3;
+              font-size: 1rem;
+              padding: 14px 14px;
+              border-radius: 8px;
+              &:hover {
+                transform: scale(1.05);
+                color: $white;
+
+              }
+            }
+          }
+        }
       }
     }
 }
