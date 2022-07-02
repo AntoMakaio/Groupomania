@@ -13,7 +13,7 @@ module.exports.readPost = (req, res) => {
   PostModel.find((err, docs) => {
     if (!err) res.send(docs);
     else console.log("Erreur récupération donnée : " + err);
-  }).sort({ createAt: -1 });
+  }).sort({ createdAt: -1 });
 };
 
 module.exports.createPost = async (req, res) => {
