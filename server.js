@@ -19,9 +19,10 @@ const corsOptions = {
   preflightContinue: false,
 };
 app.use(cors(corsOptions));
+app.use(express.json());
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+// app.use(bodyParser.json());
+// app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 //secure all - jsonwebtoken

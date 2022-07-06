@@ -32,12 +32,14 @@ module.exports.uploadProfil = async (req, res) => {
     await UserModel.findByIdAndUpdate(
       req.boby.userId,
       { $set: { picture: "./uploads/profil/" + fileName } },
-      { new: true, upsert: true, setDefaultsOnInsert: true },
-      (err, docs) => {
-        if (!err) return res.send(docs);
-        else return res.status(500).send({ message: err });
-      }
-    );
+      { new: true, upsert: true, setDefaultsOnInsert: true }
+    )
+      .then((data) => res.send(data))
+      .catch((err) => res.status(500).send({ message: err }));
+    // (err, docs) => {
+    //   if (!err) return res.send(docs);
+    //   else return res.status(500).send({ message: err });
+    // }
   } catch (err) {
     return res.status(500).send({ message: err });
   }

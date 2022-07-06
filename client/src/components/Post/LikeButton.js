@@ -21,7 +21,7 @@ const LikeButton = ({ post }) => {
 
   useEffect(() => {
     if (post.likers.includes(uid)) setLiked(true);
-    // else setLiked(false);
+    else setLiked(false);
   }, [uid, post.likers, liked]);
 
   return (
