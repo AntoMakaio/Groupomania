@@ -112,7 +112,7 @@
     }
     .btn-send {
       .cancel {
-        font-family: "font-1";
+        font-family: "font-2";
         background-color: #fff;
         border-radius: 20px;
         margin-right: 8px;
@@ -120,6 +120,7 @@
 
         &:hover {
           transform: scale(1.05);
+          color: $color-1;
         }
       }
       .send {
